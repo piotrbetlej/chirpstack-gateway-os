@@ -24,6 +24,9 @@ Building ChirpStack Gateway OS requires:
 
 * [Docker](https://www.docker.com/)
 
+### Set Raspberry Pi type
+TARGET_BOARD makefile variable set default to BCM2709. See ./conf directory for others and change if needed.
+
 ### Initialize
 
 To initialize the [OpenWrt](https://openwrt.org/) build environment, run the
@@ -57,6 +60,12 @@ development environment first:
 make devshell
 ```
 
+Then, inside developer shell (docker container)
+
+```
+quilt push -a && cd openwrt && make oldconfig && make -j$(nproc)
+```
+
 #### Switch configuration
 
 Each target and image has its own OpenWrt configuration file, files and
@@ -80,18 +89,6 @@ This will:
 * Undo all previously applied patches.
 * Update the symlinks for OpenWrt configuration and files.
 * Apply all patches. 
-
-#### Building image
-
-Once the configuration has been set, run the following command to build the
-ChirpStack Gateway OS image:
-
-```bash
-make
-```
-
-Note that this can take a couple of hours depending on the selected
-configuration and will require a significant amount of disk-space.
 
 #### Making configuration changes
 

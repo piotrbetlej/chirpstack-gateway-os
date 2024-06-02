@@ -1,7 +1,7 @@
 Index: openwrt/target/linux/bcm27xx/image/config.txt
 ===================================================================
---- openwrt.orig/target/linux/bcm27xx/image/config.txt
-+++ openwrt/target/linux/bcm27xx/image/config.txt
+--- workdir.orig/openwrt/target/linux/bcm27xx/image/config.txt
++++ workdir/openwrt/target/linux/bcm27xx/image/config.txt
 @@ -11,4 +11,11 @@
  include distroconfig.txt
  
